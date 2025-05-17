@@ -1,0 +1,32 @@
+[tool.poetry]
+name = "rattlesnake"
+version = "2.0.0"
+description = "Admin's beloved pet in every shell system to be more like in home."
+authors = ["Sett Sarverott <sarverott@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+keywords = [ "packaging", "poetry" ]
+
+
+classifiers = [
+    "Topic :: Software Development :: Build Tools",
+    "Topic :: Software Development :: Libraries :: Python Modules"
+]
+
+
+[project.urls]
+homepage = "https://python-poetry.org/"
+repository = "https://github.com/Sarverott/pyRattlesnake"
+documentation = "https://python-poetry.org/docs/"
+"Bug Tracker" = "https://github.com/python-poetry/poetry/issues"
+
+
+[tool.poetry.dependencies]
+python = "^3.12"
+go-task-bin = "^3.43.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+

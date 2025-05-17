@@ -1,0 +1,5 @@
+cache-dir = ".venv/.cache"
+[virtualenvs]
+create = true
+path = ".venv"
+prompt = "░░░RATTLESNAKE░░░"
