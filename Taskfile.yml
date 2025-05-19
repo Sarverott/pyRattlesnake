@@ -23,6 +23,7 @@ tasks:
       - git add *
       - git commit -m "automod[$(node -e 'console.log(`UNIXUSAT=${Date.now()}`)')]"
       - git push
+      
   select_ignore:
     desc: ignore stuff that is not needed but with dignity and class by .gitignores and other selective skippers
     cmds:
