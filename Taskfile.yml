@@ -2,11 +2,42 @@
 
 version: '3'
 
-vars:
-  GREETING: Hello, World!
+#env:
+#  ENV: .github
+
+#dotenv: ['.env', '{{.ENV}}/.env', '{{.HOME}}/.env']
+
+#vars:
+#  PIP_PACKS: 
 
 tasks:
+  help:
+    dir: ./docs
+    cmds:
+      - task
+  publish:
+    cmds:
+      - git fetch
+      - git pull
+      #- git submodule foreach git pull
+      - git add *
+      - git commit -m "automod[$(node -e 'console.log(`UNIXUSAT=${Date.now()}`)')]"
+      - git push
+  select_ignore:
+    desc: ignore stuff that is not needed but with dignity and class by .gitignores and other selective skippers
+    cmds:
+      - curl "https://gist.githubusercontent.com/Sarverott/a9933eea3dd0e4fc54e8ff275bd79dcf/raw/1480f29a978232284788a77162e08e73fb489fd6/selective_ignorance.sh" | bash -s git ruby,python,node 
+    silent: false
+
+  build:
+    cmds:
+#      - python3 -m venv .venv
+#      - source .venv/bin/activate
+#      - pip install poetry
+      - poetry add {{.PIP_PACKS}}
+    silent: false
+
   default:
     cmds:
-      - echo "{{.GREETING}}"
-    silent: true
+      - poetry run python3 ./src/rattlesnake/clirun.py
+    silent: false
