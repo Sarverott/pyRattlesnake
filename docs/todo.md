@@ -67,3 +67,8 @@ Miało to całkiem spory potencjał, bo mocno usprawniało prace w projektach gd
 - narzędzie do user-friendly tworzenia konfiguracji i prasowania do ZIP
 - autoaktualizator
 - 
+
+
+# IDEA REBORN
+
+- Taskfile.yml are now base format
