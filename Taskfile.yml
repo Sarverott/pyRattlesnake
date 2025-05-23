@@ -7,14 +7,14 @@ version: '3'
 
 #dotenv: ['.env', '{{.ENV}}/.env', '{{.HOME}}/.env']
 
-#vars:
-#  PIP_PACKS: 
+vars:
+  NEXT_TASK: exit 
 
 tasks:
   help:
     dir: ./docs
     cmds:
-      - task
+      - poetry run python3 ../src/rattlesnake/clirun.py
   publish:
     cmds:
       - git fetch
@@ -38,7 +38,12 @@ tasks:
       - poetry add {{.PIP_PACKS}}
     silent: false
 
+  exit:
+    cmds:
+      - exit
+
   default:
     cmds:
       - poetry run python3 ./src/rattlesnake/clirun.py
     silent: false
+    
