@@ -1,0 +1,27 @@
+{
+    "version": "3",
+    "includes":{
+        "NONE":{
+            "taskfile":"./Taskfile.yml",
+            "optional":true
+        }
+    },
+    "vars": {
+        "RATTLESNAKE": true
+    },
+    "tasks": {
+        "update": {
+            "cmds": [
+                "python ./main.py"
+            ],
+            "dir":".",
+            "silent": true
+        },
+        "default": {
+            "cmds": [
+                "uv run task update"
+            ],
+            "silent": true
+        }
+    }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "pyrattlesnake",
+  "version": "2.0.0",
+  "description": "rattlesnake cli interface",
+  "keywords": [
+    "cli",
+    "rattlesnake"
+  ],
+  "homepage": "https://github.com/Sarverott/pyRattlesnake#readme",
+  "bugs": {
+    "url": "https://github.com/Sarverott/pyRattlesnake/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sarverott/pyRattlesnake.git"
+  },
+  "license": "MIT",
+  "author": "Sett Sarverott",
+  "type": "commonjs",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "task test"
+  }
+}

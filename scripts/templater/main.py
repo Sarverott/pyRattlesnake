@@ -4,7 +4,17 @@ import git
 import os
 import argparse
 
-from templater import templates
+import json
+import yaml
 
-def makeTaskfile():
-    return templates.Taskfile
+from templater import autotasker
+
+def generate_this(file_const):
+    return {
+        "scriptspath": os.getcwd(),
+        "filepath": str((pathlib.Path(file_const) ).resolve()),
+        "dirpath": str((pathlib.Path(file_const) / "..").resolve())
+    }
+
+THIS = generate_this(__file__)
+

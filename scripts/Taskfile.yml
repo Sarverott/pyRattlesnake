@@ -1,12 +1,26 @@
-# https://taskfile.dev
-
-version: '3'
-
-vars:
-  GREETING: Hello, World!
-
+includes:
+  automods:
+    dir: ./automods
+    taskfile: ./automods/Taskfile.yml
+  examples:
+    dir: ./examples
+    taskfile: ./examples/Taskfile.yml
+  procedures:
+    dir: ./procedures
+    taskfile: ./procedures/Taskfile.yml
+  tools:
+    dir: ./tools
+    taskfile: ./tools/Taskfile.yml
 tasks:
   default:
     cmds:
-      - echo "{{.GREETING}}"
+    - uv run task update
     silent: true
+  update:
+    cmds:
+    - python ./main.py
+    dir: .
+    silent: true
+vars:
+  RATTLESNAKE: true
+version: '3'
