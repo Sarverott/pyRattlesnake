@@ -1,10 +1,3 @@
-
-
-
-
-
-
-
 # async def main() -> None:
 #     done = asyncio.Event()
 #     input = create_input()
@@ -26,8 +19,6 @@
 # if __name__ == "__main__":
 #     asyncio.run(main())
 # #import darkpoint
-
-
 
 
 # from rich import print
