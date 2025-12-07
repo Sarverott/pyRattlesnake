@@ -13,6 +13,7 @@ from rich.table import Table
 from prompt_toolkit.input import create_input
 from prompt_toolkit.keys import Keys
 
+
 output = json.loads(os.popen("task -a -j").read())
 
 options = [option for option in output["tasks"] if option["name"] != "default"]

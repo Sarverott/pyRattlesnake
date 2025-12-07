@@ -1,3 +1,21 @@
+import os
+import pathlib
+
+ROOTDIR = str((pathlib.Path(__file__) / ".." / ".." / ".."/ "..").resolve())
+
+def this(file_const):
+    global ROOTDIR
+    return {
+        "rootdir": ROOTDIR
+        "scriptspath": os.path.join(ROOTDIR, "scripts"),
+        "docs": os.path.join(ROOTDIR, "docs")
+        "filepath": str((pathlib.Path(file_const) ).resolve()),
+        "dirpath": str((pathlib.Path(file_const) / "..").resolve())
+    }
+
+THIS = generate_this(__file__)
+
+
 # importing required modules
 import argparse
 

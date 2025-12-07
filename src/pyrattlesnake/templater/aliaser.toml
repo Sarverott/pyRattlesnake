@@ -1,0 +1,3 @@
+[basic]
+ttystory = 'history > ~/ttystory-$( hostname )-$( date +%s ).txt'
+unixusat = 'node -e "console.log(`UNIXUSAT=`, Date.now())"'

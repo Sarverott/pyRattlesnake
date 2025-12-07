@@ -7,11 +7,12 @@ import argparse
 import json
 import yaml
 
-from templater import autotasker
+from pyrattlesnake.templater import autotasker
 
-def generate_this(file_const):
+def this(file_const):
     return {
-        "scriptspath": os.getcwd(),
+        "selfprojectdir": str((pathlib.Path(file_const) / "..").resolve())
+        "scriptspath": str((pathlib.Path(file_const) ).resolve(),
         "filepath": str((pathlib.Path(file_const) ).resolve()),
         "dirpath": str((pathlib.Path(file_const) / "..").resolve())
     }

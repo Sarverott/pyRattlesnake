@@ -40,3 +40,5 @@ def autoincludedScriptsTaskfiles(THIS):
         }
     with open(os.path.join(THIS["scriptspath"], "Taskfile.yml"), "w") as louncher:
         yaml.dump(data, louncher, Dumper=yaml.Dumper)
+
+#def appendTerminalComandsByAliasers()

@@ -1,2 +1,3 @@
-def hello() -> str:
-    return "Hello from pyrattlesnake!"
+__all__ = ["clirun", "templater", "core" ]
+
+from pyrattlesnake import *

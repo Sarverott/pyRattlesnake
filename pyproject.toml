@@ -30,6 +30,7 @@ dependencies = [
     "requests>=2.32.4",
     "rich>=14.2.0",
     "scapy>=2.6.1",
+    "update>=0.0.1",
 ]
 keywords = [ "packaging", "poetry" ]
 
@@ -46,5 +47,5 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.uv.workspace]
 members = [
-    "scripts/templater",
+    "src/pyrattlesnake/templater",
 ]

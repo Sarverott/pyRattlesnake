@@ -7,10 +7,20 @@ version: '3'
 
 #dotenv: ['.env', '{{.ENV}}/.env', '{{.HOME}}/.env']
 
+include:
+  helpers: 
+    taskfile: "./scripts/Taskfile.yml"
+    dir: "./scripts/"
+    flatten: true
+
 vars:
   NEXT_TASK: exit 
+  UNIXUSAT:
+    sh: node -e "console.log(Date.now())"
 
 tasks:
+  scripts:
+
   help:
     dir: ./docs
     cmds:
@@ -21,7 +31,7 @@ tasks:
       - git pull
       #- git submodule foreach git pull
       - git add *
-      - git commit -m "automod[$(node -e 'console.log(`UNIXUSAT=${Date.now()}`)')]"
+      #- git commit -m "automod[$(node -e 'console.log(`UNIXUSAT=${Date.now()}`)')]"
       - git push
       
   select_ignore:
@@ -30,12 +40,17 @@ tasks:
       - curl "https://gist.githubusercontent.com/Sarverott/a9933eea3dd0e4fc54e8ff275bd79dcf/raw/1480f29a978232284788a77162e08e73fb489fd6/selective_ignorance.sh" | bash -s git ruby,python,node 
     silent: false
 
+  history_test:
+    cmds:
+      - python -c "__import__('os').system('bash -c history')"
+
   build:
     cmds:
+      
 #      - python3 -m venv .venv
 #      - source .venv/bin/activate
 #      - pip install poetry
-      - poetry add {{.PIP_PACKS}}
+#      - poetry add {{.PIP_PACKS}}
     silent: false
 
   exit:
@@ -44,6 +59,7 @@ tasks:
 
   default:
     cmds:
-      - poetry run python3 ./src/rattlesnake/clirun.py
+      - echo {{.UNIXUSAT}}
+      - uv run python -m pyrattlesnake.clirun
     silent: false
     

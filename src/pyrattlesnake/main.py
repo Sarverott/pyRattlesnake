@@ -126,3 +126,7 @@
 
 
 # }
+
+import pyrattlesnake
+
+print(pyrattlesnake.core.ROOTDIR)
